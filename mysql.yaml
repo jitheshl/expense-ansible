@@ -11,24 +11,29 @@
     loop:
     - PyMySql
     - cryptography
+
   - name: install mysql server
     ansible.builtin.package:
       name: mysql-server
       state: installed
+
   - name: start and enables the service
     ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
+
   - name: connect mysql server
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{root_password}}"
       login_host: "{{mysql}}"
     register: mysql_info
+
   - name: print mysql info
     ansible.builtin.debug:
       msg: "{{mysql_info}}"
-  - name: set up root root_password
-    ansible.buitlin.command: my_secure_installation --set-root-pass "{{root_password}}"
+
+  - name: set up root root  password
+    ansible.buitlin.command: " my_secure_installation --set-root-pass ExpenseApp@1  "
     when: mysql_info.failed is true
