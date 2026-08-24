@@ -35,5 +35,5 @@
       msg: "{{mysql_info}}"
 
   - name: set up root root  password
-    ansible.buitlin.command: " my_secure_installation --set-root-pass ExpenseApp@1  "
+    ansible.buitin.command: " my_secure_installation --set-root-pass ExpenseApp@1  "
     when: mysql_info.failed is true
