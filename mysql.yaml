@@ -27,7 +27,7 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{root_password}}"
-      login_host: "{{ ansible_host }}"
+      login_host: 34.235.158.165
     register: mysql_info
     ignore_errors: yes
 
