@@ -57,7 +57,7 @@
       name: all
       login_user: root
       login_password: ExpenseApp@1
-      login_host: 54.158.203.51
+      login_host: 34.235.158.165
       target: /app/schema/backend.sql
 
   - name: deamon reload
